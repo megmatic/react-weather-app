@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 
+
 function Form() {
   const [lat, setLat] = useState()
   const [long, setLong] = useState()
@@ -34,19 +35,29 @@ function Form() {
   }
 
   return (
-    <div>
-      <form className="add-form" onSubmit={handleSubmit}>
-        <div className="form-control">
-          <label>Location</label>
-          <input
-            type="text"
-            placeholder="Add Location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-        </div>
-        <input type="submit" value="Submit" className="btn btn-block" />
-      </form>
+    <div className="search">
+      {/* <form onSubmit={handleSubmit}>
+        <input
+          className="search"
+          type="text"
+          placeholder="Add Location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+      </form> */}
+
+      <div className="search-box">
+        <button className="btn-search"><i className="fas fa-search"></i></button>
+        <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="input-search"
+          placeholder="Type to Search..."
+          onChange={(e) => setLocation(e.target.value)}
+          value={location}
+        />
+        </form>
+      </div>
     </div>
   )
 }
