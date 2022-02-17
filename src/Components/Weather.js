@@ -1,8 +1,8 @@
-import React from 'react'
-import { useWeatherData } from '../Contexts/WeatherDataContext'
+import {useContext} from 'react'
+import { WeatherDataContext } from '../Contexts/WeatherDataContext'
 
 function Weather() {
-  const weatherData = useWeatherData()
+  const { weatherData } = useContext(WeatherDataContext)
   return (
     <div style={{ color: 'white' }}>
       <p>Today's Forecast:</p>
