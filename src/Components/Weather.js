@@ -1,13 +1,12 @@
 import React from 'react'
-import { useLocationData } from '../Contexts/LocationDataContext'
-
+import { useWeatherData } from '../Contexts/WeatherDataContext'
 
 function Weather() {
-  const locationData = useLocationData()
+  const weatherData = useWeatherData()
   return (
     <div style={{ color: 'white' }}>
       <p>Today's Forecast:</p>
-      <p>{locationData && locationData.list[0].weather[0].description}</p>
+      <p>{weatherData && weatherData.daily[0].weather[0].description}</p>
     </div>
   )
 }
