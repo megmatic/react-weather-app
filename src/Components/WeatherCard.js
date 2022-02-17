@@ -1,13 +1,14 @@
 import React from 'react'
-import { useWeatherData } from '../Contexts/WeatherDataContext'
+import {useContext} from 'react'
+import { WeatherDataContext } from '../Contexts/WeatherDataContext'
 
 const WeatherCard = ()=> {
-    const weatherData = useWeatherData();
+    const { weatherData } = useContext(WeatherDataContext)
     const temp = weatherData && Math.ceil(weatherData.current.temp) + '*';
     const tempMin = weatherData && Math.ceil(weatherData.daily[0].temp.min) + '*';
     const tempMax = weatherData && Math.ceil(weatherData.daily[0].temp.max) + '*';
     const feelsLike = weatherData && Math.ceil(weatherData.current.feels_like) + '*';
-    const dayName = new Date(weatherData.daily[0].dt * 1000).toLocaleDateString(undefined, { weekday: 'long'});
+    const dayName = weatherData && new Date(weatherData.daily[0].dt * 1000).toLocaleDateString(undefined, { weekday: 'long'});
 
 
 

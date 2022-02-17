@@ -1,6 +1,7 @@
 import { WeatherDataProvider } from "./Contexts/WeatherDataContext"
 import Form from "./Components/Form"
 import WeatherCard from './Components/WeatherCard'
+import Weather from "./Components/Weather"
 import "./App.css"
 
 
@@ -11,6 +12,7 @@ function App() {
         <Form />
         <br/>
         <WeatherCard />
+        {/* <Weather /> */}
       </WeatherDataProvider>
     </div>
   )
