@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useContext } from "react"
+import { useEffect, useState, useRef, useContext } from "react";
 import LocationService from "../Services/LocationService";
 import WeatherService from "../Services/WeatherService";
 import { WeatherDataContext } from '../Contexts/WeatherDataContext'
