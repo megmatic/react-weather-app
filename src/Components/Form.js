@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import LocationService from "../services/LocationService";
 import WeatherService from "../services/WeatherService";
 
@@ -9,6 +9,25 @@ function Form() {
   const [location, setLocation] = useState("");
   const [locationInfo, setLocationInfo] = useState([]);
 
+  const isInitialMount = useRef(true);
+  const isInitialMount1 = useRef(true)
+  
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      getForcast();
+    }
+  },[lng]);
+
+  useEffect(() => {
+    if (isInitialMount1.current) {
+      isInitialMount1.current = false;
+    } else {
+      console.log(locationInfo)
+    }
+  },[locationInfo]);
+  
   
   async function getForcast() {
     const res = await WeatherService.getForcast(lat, lng)
@@ -21,15 +40,11 @@ function Form() {
     setLng(res.data.results[0].geometry.location.lng)
   }
   
-  useEffect(() => {
-    getForcast();
-  },[lat,lng])
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    await getGeocode()
-    await getForcast()
-    console.log(locationInfo.city.name)
+    
+    getGeocode()
+    
   }
 
   return (
