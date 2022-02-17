@@ -10,7 +10,7 @@ class WeatherService {
 
   getWeatherOneCall(lat, lng) {
     return axios.get(
-      `${OPEN_WEATHER_API_BASE_URL}onecall?lat=${lat}&lon=${lng}&exclude=minutely,hourly,current,alerts&appid=${process.env.REACT_APP_WEATHER_FIRST_API}&units=imperial`
+      `${OPEN_WEATHER_API_BASE_URL}onecall?lat=${lat}&lon=${lng}&exclude=minutely,hourly,alerts&appid=${process.env.REACT_APP_WEATHER_FIRST_API}&units=imperial`
     )
   }
 
