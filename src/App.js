@@ -1,4 +1,4 @@
-import { LocationDataProvider } from "./Contexts/LocationDataContext"
+import { WeatherDataProvider } from "./Contexts/WeatherDataContext"
 import Form from "./Components/Form"
 import Weather from './Components/Weather'
 import "./App.css"
@@ -7,10 +7,10 @@ import "./App.css"
 function App() {
   return (
     <div className="App">
-      <LocationDataProvider>
+      <WeatherDataProvider>
         <Form />
         <Weather />
-      </LocationDataProvider>
+      </WeatherDataProvider>
     </div>
   )
 }

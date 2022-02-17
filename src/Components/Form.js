@@ -1,16 +1,15 @@
 import { useEffect, useState, useRef } from "react"
 import LocationService from "../Services/LocationService";
 import WeatherService from "../Services/WeatherService";
-import { useLocationData, useLocationDataUpdate} from '../Contexts/LocationDataContext'
-
+import { useWeatherData, useWeatherDataUpdate} from '../Contexts/WeatherDataContext'
 
 function Form() {
   const [lat, setLat] = useState()
   const [lng, setLng] = useState()
   const [location, setLocation] = useState("");
   // const [locationInfo, setLocationInfo] = useState([]);
-  const locationData = useLocationData()
-  const updateLocationData = useLocationDataUpdate()
+  const weatherData = useWeatherData()
+  const updateWeatherData = useWeatherDataUpdate()
 
   const isInitialMount = useRef(true);
   const isInitialMount1 = useRef(true)
@@ -19,7 +18,7 @@ function Form() {
     if (isInitialMount.current) {
       isInitialMount.current = false;
     } else {
-      getForcast();
+      getWeatherData();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[lng]);
@@ -28,15 +27,14 @@ function Form() {
     if (isInitialMount1.current) {
       isInitialMount1.current = false;
     } else {
-      console.log(locationData)
-      console.log(locationData.list[0].weather[0].description)
+      console.log(weatherData)
+      console.log(weatherData.daily[0].weather[0].description)
     }
-  },[locationData]);
+  },[weatherData]);
   
-  
-  async function getForcast() {
-    const res = await WeatherService.getForcast(lat, lng)
-    updateLocationData(res.data)
+  async function getWeatherData() {
+    const res = await WeatherService.getWeatherOneCall(lat, lng)
+    updateWeatherData(res.data)
   }
   
   const getGeocode = async () => {
