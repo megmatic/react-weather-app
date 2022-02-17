@@ -1,36 +1,31 @@
 import { useState } from "react"
-import axios from "axios"
+import LocationService from "../services/LocationService";
+import WeatherService from "../services/WeatherService";
 
 function Form() {
   const [lat, setLat] = useState()
-  const [long, setLong] = useState()
+  const [lng, setLng] = useState()
   const [location, setLocation] = useState("");
   const [locationInfo, setLocationInfo] = useState('')
 
-  const handleSubmit = (e) => {
+  const getGeocode = async () => {
+    const res = await LocationService.getGeocode(location)
+    const latitude = res.data.results[0].geometry.location.lat
+    const longitude = res.data.results[0].geometry.location.lng
+    setLat(latitude)
+    setLng(longitude)
+    console.log(latitude, longitude, lat, lng)
+  }
+
+  const getForcast = async () => {
+    const res = await WeatherService.getForcast(lat, lng)
+    console.log(res.data)
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-
-    axios
-      .get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${process.env.REACT_APP_GEOCODER_API}`
-      )
-      .then((res) => {
-
-        var latitude = res.data.results[0].geometry.location.lat
-        var longitude = res.data.results[0].geometry.location.lng
-        setLat(latitude)
-        setLong(longitude)
-      })
-
-
-
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_WEATHER_FIRST_API}`
-      )
-      .then((res) => {
-        console.log(res)
-      })
+    await getGeocode()
+    await getForcast()
   }
 
   return (
