@@ -1,4 +1,5 @@
 import { WeatherDataProvider } from "./Contexts/WeatherDataContext"
+import { LocationDataProvider } from "./Contexts/LocationDataContext"
 import Form from "./Components/Form"
 import WeatherCard from './Components/WeatherCard'
 import Weather from "./Components/Weather"
@@ -9,10 +10,10 @@ function App() {
   return (
     <div className="App">
       <WeatherDataProvider>
-        <Form />
-        <br/>
-        <WeatherCard />
-        {/* <Weather /> */}
+        <LocationDataProvider>
+            <Form />
+            <WeatherCard />
+          </LocationDataProvider>
       </WeatherDataProvider>
     </div>
   )

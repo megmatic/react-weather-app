@@ -1,14 +1,15 @@
 import { useEffect, useState, useRef, useContext } from "react";
 import LocationService from "../Services/LocationService";
 import WeatherService from "../Services/WeatherService";
-import { WeatherDataContext } from '../Contexts/WeatherDataContext';
+import { WeatherDataContext } from '../Contexts/WeatherDataContext'
+import { LocationDataContext } from "../Contexts/LocationDataContext";
 
 function Form() {
   const [lat, setLat] = useState()
   const [lng, setLng] = useState()
   const [location, setLocation] = useState("");
-  // const [locationInfo, setLocationInfo] = useState([]);
-  const { weatherData, setWeatherData} = useContext(WeatherDataContext)
+  const { weatherData, setWeatherData } = useContext(WeatherDataContext)
+  const { setLocationData } = useContext(LocationDataContext)
 
   const isInitialMount = useRef(true);
   const isInitialMount1 = useRef(true)
@@ -38,6 +39,7 @@ function Form() {
   
   const getGeocode = async () => {
     const res = await LocationService.getGeocode(location)
+    setLocationData(res.data)
     setLat(res.data.results[0].geometry.location.lat)
     setLng(res.data.results[0].geometry.location.lng)
   }
