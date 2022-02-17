@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react"
-import LocationService from "../services/LocationService";
-import WeatherService from "../services/WeatherService";
+import LocationService from "../Services/LocationService";
+import WeatherService from "../Services/WeatherService";
 
 
 function Form() {
@@ -42,9 +42,7 @@ function Form() {
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    
     getGeocode()
-    
   }
 
   return (
