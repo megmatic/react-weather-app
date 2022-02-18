@@ -10,8 +10,8 @@ export function WeatherDataProvider({ children }) {
     return weatherData && Math.ceil(weatherData.current.temp) + '\u00B0'
   }
 
-  const getTempMin = () => {
-    return weatherData && Math.ceil(weatherData.daily[0].temp.min) + '\u00B0/ '
+  const getTempMin = (day) => {
+    return weatherData && Math.ceil(weatherData.daily[day].temp.min) + '\u00B0/ '
   }
 
   const getTempMax = () => {
@@ -34,8 +34,20 @@ export function WeatherDataProvider({ children }) {
     return weatherData && `http://openweathermap.org/img/w/${icon}.png`
   }
 
+  const getCurrentWeather = () => {
+    return weatherData && weatherData.current
+  }
+
+  const getCurrentTemp = () => {
+    return weatherData && Math.ceil(weatherData.current.temp) + "\u00B0"
+  }
+
+  const getCurrentDescription = () => {
+    return weatherData && weatherData.current.weather[0].description
+  }
+
   return (
-    <WeatherDataContext.Provider value={{ weatherData, setWeatherData, getTemp, getTempMin, getTempMax, getFeelsLike, getDayName, getIcon, getIconUrl }}>
+    <WeatherDataContext.Provider value={{ weatherData, setWeatherData, getTemp, getTempMin, getTempMax, getFeelsLike, getDayName, getIcon, getIconUrl, getCurrentWeather, getCurrentTemp, getCurrentDescription }}>
       {children}
     </WeatherDataContext.Provider>
   )
