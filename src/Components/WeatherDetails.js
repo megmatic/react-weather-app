@@ -14,11 +14,11 @@ function WeatherDetails({ day }) {
     navigate('/')
   }
   const humidity =
-    weatherData && "Humidity: " + weatherData.current.humidity + "%"
-  const description = weatherData && weatherData.current.weather[0].description
-  const main = weatherData && weatherData.current.weather[0].main
-  const windSpeed = weatherData && weatherData.current.wind_speed
-  const rain = weatherData && weatherData.daily[0].rain
+    weatherData && "Humidity: " + weatherData.daily[key].humidity + "%"
+  const description = weatherData && weatherData.daily[key].weather[0].description
+  const main = weatherData && weatherData.daily[key].weather[0].main
+  const windSpeed = weatherData && weatherData.daily[key].wind_speed
+  const rain = weatherData && weatherData.daily[key].rain
   return (
     <div className="weather-details-container">
       <p className="humidity">{humidity}</p>
