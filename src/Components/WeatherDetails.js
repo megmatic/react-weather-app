@@ -32,7 +32,8 @@ function WeatherDetails({ day }) {
       <div className="icon-wind">Wind Icon</div>
       <div className="icon-rain">Rain Icon</div>
       <div className="icon-uv">UV Icon</div>
-      <button onClick={handleClick}>
+      <br/>
+      <button className="back-button" onClick={handleClick}>
         Go Back
       </button>
     </div>
