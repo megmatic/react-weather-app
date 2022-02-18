@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { WeatherDataContext } from "../Contexts/WeatherDataContext"
-import { useNavigate, useParams, Link, Navigate } from "react-router-dom"
+import { useNavigate, useParams, Link } from "react-router-dom"
 
 function WeatherDetails({ day }) {
   const { weatherData, getTempMin } = useContext(WeatherDataContext)
