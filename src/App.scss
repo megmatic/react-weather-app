@@ -142,7 +142,9 @@ img {
 
 .weather-details-container {
   display: grid; 
-  background: white;
+  background-color: rgb(34, 33, 33);
+  color: white;
+  font-size: 15px;
   grid-template-columns: 1.6fr 0.4fr; 
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
   gap: 0px 0px; 
@@ -239,5 +241,13 @@ img {
   align-items: center;
   justify-content: center;
 
+}
+
+.back-button {
+  background-color: rgb(66, 66, 66);
+  border:none;
+  width:300px;
+  display: inline-block;
+  color: white;
 }
 
