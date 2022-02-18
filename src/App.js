@@ -6,6 +6,7 @@ import WeatherCardList from "./Components/WeatherCardList"
 import WeatherCard from './Components/WeatherCard'
 import WeatherDetails from "./Components/WeatherDetails"
 import Weather from "./Components/Weather"
+import Current from './Components/Current'
 import "./App.scss"
 
 
@@ -14,11 +15,13 @@ function App() {
     <div className="App">
       <WeatherDataProvider>
         <LocationDataProvider>
-            <Form />
-            <br/>
-            <WeatherCardList />
-            <WeatherDetails />
-          </LocationDataProvider>
+          <Form />
+          <br />
+          <Current />
+          <WeatherCardList />
+          <WeatherDetails />
+        </LocationDataProvider>
+
       </WeatherDataProvider>
     </div>
   )

@@ -60,14 +60,6 @@
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
-
-
-
-
-
-
-
-
 .weathercard-container {
   display: grid; 
   flex: 0 0 auto;
@@ -147,6 +139,7 @@ img {
   font-size: 30px;
 }
 
+
 .weather-details-container {
   display: grid; 
   background: white;
@@ -210,4 +203,41 @@ img {
 }
 
 
+.current {  
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "name name"
+    "icon icon"
+    "icon icon"
+    "description description"
+    "temp temp"
+    "temp temp"
+    "data1 data2";
+}
+
+
+.name { grid-area: name; }
+
+.icon { grid-area: icon; }
+
+.description { grid-area: description; }
+
+.temp { grid-area: temp; }
+
+.data1 { grid-area: data1; }
+
+.data2 { grid-area: data2; }
+
+.current-container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 
