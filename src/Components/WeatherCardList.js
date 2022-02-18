@@ -13,7 +13,7 @@ function WeatherCardList() {
       <p className='locationname'>{getLocationName()}</p>
     <div className='weathercardlist'>
     {weatherData && weatherData.daily.map((day, i) => {
-        return <WeatherCard key={i} day={day}/> 
+        return <WeatherCard className='card' key={i} day={day}/> 
     })}
     </div>
     </div>
