@@ -4,6 +4,7 @@ export const WeatherDataContext = createContext()
 
 export function WeatherDataProvider({ children }) {
   const [weatherData, setWeatherData] = useState()
+  const [weatherList, setWeatherList] = useState([])
 
   const getTemp = () => {
     return weatherData && Math.ceil(weatherData.current.temp) + '\u00B0'
@@ -30,7 +31,7 @@ export function WeatherDataProvider({ children }) {
   }
 
   const getIconUrl = (icon) => {
-    return `http://openweathermap.org/img/w/${icon}.png`
+    return weatherData && `http://openweathermap.org/img/w/${icon}.png`
   }
 
   return (

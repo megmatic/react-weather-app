@@ -10,6 +10,7 @@ function Form() {
   const [location, setLocation] = useState("");
   const { weatherData, setWeatherData } = useContext(WeatherDataContext)
   const { setLocationData } = useContext(LocationDataContext)
+  const { setWeatherList } = useContext(WeatherDataContext)
 
   const isInitialMount = useRef(true);
   const isInitialMount1 = useRef(true)
