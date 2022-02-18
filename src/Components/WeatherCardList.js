@@ -10,8 +10,9 @@ function WeatherCardList() {
   return (
       <div className='weathercardlist-container'>
     <div className='weathercardlist'>
-    {weatherData && weatherData.daily.map((day, i) => {
-        return <WeatherCard className='card' key={i} day={day}/> 
+        {weatherData && weatherData.daily.map((day, i) => {
+          console.log(i, day)
+          return <WeatherCard className='card' key={i} day={day} num={i}/> 
     })}
     </div>
     </div>
