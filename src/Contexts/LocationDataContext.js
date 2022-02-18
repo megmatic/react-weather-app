@@ -6,7 +6,7 @@ export function LocationDataProvider({ children }) {
   const [locationData, setLocationData] = useState()
 
   const getLocationName = () => {
-    return locationData.results[0].formatted_address
+    return locationData && locationData.results[0].formatted_address
   }
 
   return (

@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+/* ///search box */
 .search-box{
   display: inline-block;
   width: 250px;
@@ -65,6 +66,7 @@
   width: 300px;
   background-color: #019fad;
   border-radius: 20px;
+  margin: 5px;
 }
 
 .temp {
@@ -103,6 +105,28 @@ img {
   height: 125%;
 }
 
+.location-name {
+  color:white;
+  font-size: 20px;
+}
+
+.weathercardlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+
+}
+
+.weathercardlist-container {
+  display: inline-block;
+  
+}
+
+.locationname {
+  color:white;
+  font-size: 30px;
+}
 
 
 
