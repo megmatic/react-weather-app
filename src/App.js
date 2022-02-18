@@ -4,6 +4,7 @@ import {useContext} from 'react'
 import Form from "./Components/Form"
 import WeatherCardList from "./Components/WeatherCardList"
 import WeatherCard from './Components/WeatherCard'
+import WeatherDetails from "./Components/WeatherDetails"
 import Weather from "./Components/Weather"
 import Current from './Components/Current'
 import "./App.scss"
@@ -18,7 +19,9 @@ function App() {
           <br />
           <Current />
           <WeatherCardList />
+          <WeatherDetails />
         </LocationDataProvider>
+
       </WeatherDataProvider>
     </div>
   )

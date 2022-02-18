@@ -139,6 +139,70 @@ img {
   font-size: 30px;
 }
 
+
+.weather-details-container {
+  display: grid; 
+  background: white;
+  grid-template-columns: 1.6fr 0.4fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "humidity icon-humidity"
+    "sunrise icon-sunrise"
+    "Sunset icon-sunset"
+    "wind icon-wind"
+    "rain icon-rain"
+    "uv-index icon-uv"; 
+}
+.humidity { 
+  grid-area: humidity; 
+}
+
+.sunrise { 
+  grid-area: sunrise; 
+}
+
+.Sunset { 
+  grid-area: Sunset; 
+}
+
+.wind { 
+  grid-area: wind;
+}
+
+.rain { 
+  grid-area: rain; 
+}
+
+.uv-index { 
+  grid-area: uv-index; 
+}
+
+.icon-humidity { 
+  grid-area: icon-humidity; 
+}
+
+.icon-sunrise { 
+  grid-area: icon-sunrise; 
+}
+
+.icon-sunset { 
+  grid-area: icon-sunset; 
+}
+
+.icon-wind { 
+  grid-area: icon-wind; 
+}
+
+.icon-rain { 
+  grid-area: icon-rain; 
+}
+
+.icon-uv { 
+  grid-area: icon-uv; 
+}
+
+
 .current {  
   color: white;
   display: grid;
@@ -155,6 +219,7 @@ img {
     "temp temp"
     "data1 data2";
 }
+
 
 .name { grid-area: name; }
 
