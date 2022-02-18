@@ -10,8 +10,8 @@ export function WeatherDataProvider({ children }) {
     return weatherData && Math.ceil(weatherData.current.temp) + '\u00B0'
   }
 
-  const getTempMin = () => {
-    return weatherData && Math.ceil(weatherData.daily[0].temp.min) + '\u00B0/ '
+  const getTempMin = (day) => {
+    return weatherData && Math.ceil(weatherData.daily[day].temp.min) + '\u00B0/ '
   }
 
   const getTempMax = () => {
