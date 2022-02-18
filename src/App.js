@@ -5,7 +5,7 @@ import Form from "./Components/Form"
 import WeatherCardList from "./Components/WeatherCardList"
 import WeatherCard from './Components/WeatherCard'
 import Weather from "./Components/Weather"
-import "./App.css"
+import "./App.scss"
 
 
 function App() {

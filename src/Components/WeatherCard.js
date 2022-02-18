@@ -20,11 +20,9 @@ const WeatherCard = ({day})=> {
     return (
         <div className='weathercard-container'>
             <div className='weathercard'>
-                <p className='temp'>{temp}</p>
-                
-                <p className='temp-string'>{tempMin && (tempMin + tempMax)}</p>
                 <p className='day'>{dayName}</p>
                 <p className='icon'><img src={iconUrl}  /></p>
+                <p className='temp'>{temp}</p>
             </div>           
         </div>
     )

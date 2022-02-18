@@ -60,45 +60,53 @@
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
+
+
+
+
+
+
+
+
 .weathercard-container {
-  display: inline-block;
+  display: grid; 
+  flex: 0 0 auto;
   height: 200px;
-  width: 300px;
+  width: 180px;
   background-color: #019fad;
   border-radius: 20px;
   margin: 5px;
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "Day"
+    "Icon"
+    "Temp"; 
 }
-
-.temp {
-  position: relative;
-  color: white;
-  font-size: 75px;
-  top: -75px;
-  left: -75px
-  
-}
-
-.temp-string {
-  position: relative;
-  color: white;
-  top: -120px;
-  right: 45px
-}
-
 .day {
   position: relative;
-  color: white;
-  font-size: 30px;
-  top: -150px;
-  right: 65px;
+   grid-area: Day;
+   color: white;
+  font-size: 20px;
+  bottom: 20px
+   
 }
 
-.icon {
+.icon { 
   position: relative;
+  grid-area: Icon;
   height: 100px;
-  bottom: 370px;
-  left: 63px;
-  
+  bottom: 50px; 
+}
+
+.temp { 
+  position: relative;
+  grid-area: Temp;
+  color: white;
+  font-size: 75px; 
+  bottom: 140px;
+  left: 10px
 }
 
 img {
@@ -110,19 +118,30 @@ img {
   font-size: 20px;
 }
 
+.weathercard {
+  flex: 0 0 auto;
+  height: 100px;
+}
+
 .weathercardlist {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
-
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; 
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.weathercardlist-container {
-  display: inline-block;
-  
+::-webkit-scrollbar {
+  background: #868685;
+  height: 7px;
 }
 
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 20px;
+}
 .locationname {
   color:white;
   font-size: 30px;
